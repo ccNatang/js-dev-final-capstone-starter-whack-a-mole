@@ -2,14 +2,14 @@ const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const startButton = document.querySelector('#start');
 // TODO: Add the missing query selectors:
-const score = document.querySelector('.points'); // Use querySelector() to get the score element
-const timerDisplay = document.querySelector('.timer'); // use querySelector() to get the timer element.
+const score = document.querySelector('#score'); // Use querySelector() to get the score element
+const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
 
 let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "hard";
+let difficulty = "easy";
 
 /**
  * Generates a random integer within a range.
@@ -167,7 +167,8 @@ function toggleVisibility(hole){
 */
 function updateScore() {
   // TODO: Write your code here
-score.textContent = points;
+  points++;
+  score.textContent = points;
   return points;
 }
 
@@ -180,8 +181,8 @@ score.textContent = points;
 */
 function clearScore() {
   // TODO: Write your code here
-  // points = 0;
-  // score.textContent = points;
+  points = 0;
+  score.textContent = points;
   return points;
 }
 
@@ -219,7 +220,7 @@ function startTimer() {
 */
 function whack(event) {
   // TODO: Write your code here.
-  // call updateScore()
+  updateScore()
   return points;
 }
 
@@ -230,7 +231,9 @@ function whack(event) {
 */
 function setEventListeners(){
   // TODO: Write your code here
-
+ for (let mole of moles) {
+  mole.addEventListener('click', whack)
+ }
   return moles;
 }
 
@@ -283,6 +286,13 @@ function startGame(){
   return "game started";
 }
 
+console.log("Score element:", score); // Debugging
+if (score) {
+    score.textContent = points;
+} else {
+    console.error("Error: score element not found!");
+}
+
 startButton.addEventListener("click", startGame);
 
 
@@ -305,3 +315,4 @@ window.time = time;
 window.setDuration = setDuration;
 window.toggleVisibility = toggleVisibility;
 window.setEventListeners = setEventListeners;
+
