@@ -97,7 +97,6 @@ function chooseHole(holes) {
 *
 */
 function gameOver() {
-  // TODO: Write your code here
   if (time > 0) {
     timeoutID = showUp()
     return timeoutID
@@ -118,8 +117,8 @@ function gameOver() {
 *
 */
 function showUp() {
-  let delay = setDelay(difficulty); // TODO: Update so that it uses setDelay()
-  const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
+  let delay = setDelay(difficulty); 
+  const hole = chooseHole(holes);  
   return showAndHide(hole, delay);
 }
 
