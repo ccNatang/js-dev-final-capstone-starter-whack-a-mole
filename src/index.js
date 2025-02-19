@@ -5,6 +5,8 @@ const startButton = document.querySelector('#start');
 const score = document.querySelector('#score'); // Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
 
+const modes = document.querySelectorAll('.mode');
+
 let time = 0;
 let timer;
 let lastHole = 0;
@@ -24,6 +26,23 @@ function randomInteger(min, max) {
   // return Math.floor(Math.random() * (max - min + 1)) + min;
   return Math.floor(Math.random()*(max - min)) + min;
 }
+
+function changeDifficulty() {
+  difficulty = this.textContent.toLowerCase();
+  console.log(`Difficulty set to: ${difficulty}`) // To test in console that diffulty changes
+  const difficultyDisplay = document.getElementById('current-difficulty');
+  difficultyDisplay.textContent = `Current Difficulty: ${this.textContent}`;
+}
+
+function setDifficulty(){
+  // TODO: Write your code here
+ for (let mode of modes) {
+  mode.addEventListener('click', changeDifficulty);
+  }
+}
+setDifficulty()
+
+
 
 /**
  * Sets the time delay given a difficulty parameter.
