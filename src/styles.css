@@ -30,6 +30,19 @@ h2 {
     font-size: 30px;
 }
 
+.modes {
+  text-align: center;
+  font-size: 30px;
+}
+
+#current-difficulty {
+  text-align: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  color: white;
+  -webkit-text-stroke: 1px black;
+}
+
 #timer{
     color: white;
 }
