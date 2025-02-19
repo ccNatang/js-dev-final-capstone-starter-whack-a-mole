@@ -35,6 +35,12 @@ h2 {
   font-size: 30px;
 }
 
+.sample-song {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
 #current-difficulty {
   text-align: center;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -53,7 +59,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  /*cursor: url('./assets/mallet.png'), pointer;*/
+  cursor: url('../assets/mallet.png'), pointer;
 }
 
 .hole {
